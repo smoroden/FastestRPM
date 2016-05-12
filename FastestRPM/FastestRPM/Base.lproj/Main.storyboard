@@ -89,7 +89,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="8Gl-Pf-81d">
+                <panGestureRecognizer minimumNumberOfTouches="1" maximumNumberOfTouches="1" id="8Gl-Pf-81d">
                     <connections>
                         <action selector="detectPanVelocity:" destination="BYZ-38-t0r" id="vqk-vp-u4h"/>
                     </connections>
