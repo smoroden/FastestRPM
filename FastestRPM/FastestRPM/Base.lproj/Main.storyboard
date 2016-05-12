@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speedo.png" translatesAutoresizingMaskIntoConstraints="NO" id="tpe-Pl-iVo">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="needle.png" translatesAutoresizingMaskIntoConstraints="NO" id="TmT-WO-WFc">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="198" id="EUa-0M-zos">
+                                        <variation key="widthClass=compact" constant="294"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="198" id="hEG-8y-Rk7">
+                                        <variation key="widthClass=compact" constant="294"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="EUa-0M-zos"/>
+                                        <exclude reference="hEG-8y-Rk7"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="EUa-0M-zos"/>
+                                        <include reference="hEG-8y-Rk7"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="TmT-WO-WFc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7K5-Hr-Xju">
+                                <variation key="widthClass=compact" constant="3"/>
+                            </constraint>
+                            <constraint firstItem="TmT-WO-WFc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9X2-ss-vNg">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="tpe-Pl-iVo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9ud-Ih-y7b"/>
+                            <constraint firstItem="tpe-Pl-iVo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="FEF-lJ-BF0"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="tpe-Pl-iVo"/>
+                                <exclude reference="TmT-WO-WFc"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="9ud-Ih-y7b"/>
+                                <exclude reference="FEF-lJ-BF0"/>
+                                <exclude reference="7K5-Hr-Xju"/>
+                                <exclude reference="9X2-ss-vNg"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="tpe-Pl-iVo"/>
+                                <include reference="TmT-WO-WFc"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="9ud-Ih-y7b"/>
+                                <include reference="FEF-lJ-BF0"/>
+                                <include reference="7K5-Hr-Xju"/>
+                                <include reference="9X2-ss-vNg"/>
+                            </mask>
+                        </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="8Gl-Pf-81d" appends="YES" id="YPH-QJ-Ule"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="needleView" destination="TmT-WO-WFc" id="sgs-tN-oco"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="8Gl-Pf-81d">
+                    <connections>
+                        <action selector="detectPanVelocity:" destination="BYZ-38-t0r" id="vqk-vp-u4h"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="339" y="389"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="needle.png" width="400" height="400"/>
+        <image name="speedo.png" width="300" height="300"/>
+    </resources>
+</document>
